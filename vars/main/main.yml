@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+time_repos_create: "{{ _time_repos_create['all']
+  | union ( _time_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+time_repos_download: "{{ _time_repos_download['all']
+  | union ( _time_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+time_templates_copy: "{{ _time_templates_copy['all']
+  | union ( _time_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+time_services_enable: "{{ _time_services_enable['all']
+  | union ( _time_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+time_selinux_enable: "{{ _time_selinux_enable['all']
+  | union ( _time_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+time_packages_remove: "{{ _time_packages_remove['all']
+  | union ( _time_packages_remove[my_os]
+  | default([]) ) }}"
+time_packages_repos: "{{ _time_packages_repos['all']
+  | union ( _time_packages_repos[my_os]
+  | default([]) ) }}"
+time_packages_prereq: "{{ _time_packages_prereq['all']
+  | union ( _time_packages_prereq[my_os]
+  | default([]) ) }}"
+time_packages_install: "{{ _time_packages_install['all']
+  | union ( _time_packages_install[my_os]
+  | default([]) ) }}"

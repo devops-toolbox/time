@@ -1,0 +1,27 @@
+---
+# Install time packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ time_packages_remove }}"
+    state: absent
+  become: true
+  when: time_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ time_packages_repos }}"
+    state: "{{ time_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ time_packages_prereq }}"
+    state: "{{ time_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ time_packages_install }}"
+    state: "{{ time_packages_state }}"
+  become: true

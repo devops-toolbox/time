@@ -1,0 +1,11 @@
+---
+# Configure time
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ time_services_enable }}"
+  when: time_enable_service
