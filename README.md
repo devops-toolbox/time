@@ -8,10 +8,10 @@ time: Time
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.time](https://galaxy.ansible.com/devops-toolbox.time)
+[https://galaxy.ansible.com/devopstoolbox.time](https://galaxy.ansible.com/devopstoolbox.time)
 
 ```bash
-ansible-galaxy install devops-toolbox.time
+ansible-galaxy install devopstoolbox.time
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: time is configured
       import_role:
-        name: devops-toolbox.time
+        name: devopstoolbox.time
       vars:
         time_packages_state: present
         time_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
